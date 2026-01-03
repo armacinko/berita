@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dapur Pinky - Blog Masak</title>
+    <title>Dapur Pinky - Resep Pilihan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main-wrapper"> <header>
+    <div class="main-wrapper">
+        <header>
             <h1>🎀 Dapur Pinky 🎀</h1>
-            <p>Resep Pilihan Satu Per Satu</p>
+            <p>Resep Rumahan Praktis & Estetik</p>
         </header>
 
         <div class="container">
-            <div id="daftar-artikel" class="card-grid"></div>
+            <div id="daftar-artikel" class="card-grid">
+                </div>
         </div>
 
-        <footer style="text-align:center; padding: 20px; color: #999;">
-            &copy; 2026 Dapur Pinky
-        </footer>
+        <footer>&copy; 2026 Dapur Pinky</footer>
     </div>
 
     <script src="data-artikel.js"></script>
     <script>
         const container = document.getElementById('daftar-artikel');
+        
+        // Render Artikel
         daftarArtikel.forEach(art => {
             container.innerHTML += `
                 <div class="card">
@@ -37,28 +39,21 @@
                 </div>
             `;
         });
-    </script>
-    <script>
-    // Fungsi untuk menambahkan nofollow secara otomatis pada link eksternal
-    function setNoFollow() {
-        const links = document.getElementsByTagName('a');
-        const currentDomain = window.location.hostname;
 
+        // Fitur NoFollow Otomatis
+        const links = document.getElementsByTagName('a');
         for (let i = 0; i < links.length; i++) {
-            const link = links[i];
-            // Jika link memiliki href dan tidak mengandung domain kita sendiri
-            if (link.href && !link.href.includes(currentDomain) && !link.href.startsWith('#')) {
-                link.setAttribute('rel', 'nofollow');
-                // Opsional: Membuka link di tab baru agar user tidak meninggalkan blog Anda
-                link.setAttribute('target', '_blank');
+            if (links[i].hostname !== window.location.hostname) {
+                links[i].setAttribute('rel', 'nofollow');
+                links[i].setAttribute('target', '_blank');
             }
         }
-    }
 
-    // Jalankan fungsi setelah semua artikel selesai dimuat
-    // Karena artikel dimuat dinamis, kita beri sedikit delay atau panggil setelah render
-    setTimeout(setNoFollow, 500);
-</script>
+        // Fitur Blokir Klik Kanan & Keyboard (Inspek)
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.onkeydown = e => {
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || (e.ctrlKey && e.keyCode == 85)) return false;
+        };
+    </script>
 </body>
 </html>
-
