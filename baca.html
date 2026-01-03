@@ -59,6 +59,53 @@
     // Karena artikel dimuat dinamis, kita beri sedikit delay atau panggil setelah render
     setTimeout(setNoFollow, 500);
 </script>
+    <script src="data-artikel.js"></script>
+    <script>
+        // --- KODE LOGIKA ARTIKEL ---
+        const params = new URLSearchParams(window.location.search);
+        const idArt = params.get('id');
+        const artikel = daftarArtikel.find(item => item.id === idArt);
+
+        if (artikel) {
+            document.title = artikel.judul;
+            document.getElementById('konten-lengkap').innerHTML = `
+                <img src="${artikel.gambar}" class="detail-img">
+                <h1 style="color:var(--pink-dark);">${artikel.judul}</h1>
+                <div class="isi-artikel">${artikel.isiLengkap}</div>
+            `;
+
+            // --- 1. LETAKKAN SCHEMA.ORG DI SINI (Setelah artikel ditemukan) ---
+            const schemaData = {
+                "@context": "https://schema.org/",
+                "@type": "Recipe",
+                "name": artikel.judul,
+                "description": artikel.cuplikan,
+                "image": [artikel.gambar],
+                "author": { "@type": "Person", "name": "Dapur Pinky" }
+            };
+            const scriptSchema = document.createElement('script');
+            scriptSchema.type = 'application/ld+json';
+            scriptSchema.text = JSON.stringify(schemaData);
+            document.head.appendChild(scriptSchema);
+        }
+
+        // --- 2. LETAKKAN NOFOLLOW DI SINI ---
+        const links = document.getElementsByTagName('a');
+        for (let i = 0; i < links.length; i++) {
+            if (links[i].hostname !== window.location.hostname) {
+                links[i].setAttribute('rel', 'nofollow');
+                links[i].setAttribute('target', '_blank');
+            }
+        }
+
+        // --- 3. LETAKKAN BLOKIR KLIK KANAN DI SINI ---
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.onkeydown = e => {
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73)) return false;
+        };
+    </script>
+</body> </html>
 </body>
 </html>
+
 
