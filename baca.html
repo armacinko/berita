@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div style="margin: 20px 0;"><a href="index.html" style="color: var(--pink-dark); text-decoration: none;">← Kembali ke Beranda</a></div>
-        
-        <div id="konten-lengkap" class="detail-content">
+    <div class="main-wrapper">
+        <div class="container">
+            <div style="margin: 10px 0 20px 0;">
+                <a href="index.html" style="color: var(--pink-dark); text-decoration: none; font-weight: bold;">← Kembali</a>
             </div>
+            
+            <div id="konten-lengkap" class="detail-content">
+                </div>
+        </div>
     </div>
 
     <script src="data-artikel.js"></script>
@@ -25,13 +29,13 @@
             document.getElementById('konten-lengkap').innerHTML = `
                 <img src="${artikel.gambar}" class="detail-img">
                 <span class="tag">${artikel.tag}</span>
-                <h1>${artikel.judul}</h1>
+                <h1 style="color:var(--pink-dark);">${artikel.judul}</h1>
                 <p><small>${artikel.tanggal}</small></p>
                 <hr>
-                <div>${artikel.isiLengkap}</div>
+                <div class="isi-artikel">${artikel.isiLengkap}</div>
             `;
         } else {
-            document.getElementById('konten-lengkap').innerHTML = "<h2>Artikel tidak ditemukan.</h2>";
+            document.getElementById('konten-lengkap').innerHTML = "<h2>Resep tidak ditemukan.</h2>";
         }
     </script>
 </body>
