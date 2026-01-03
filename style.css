@@ -2,29 +2,91 @@
     --pink-dark: #d81b60;
     --pink-main: #ff85a1;
     --pink-soft: #fff0f3;
+    --bg-gray: #fdfdfd;
 }
 
 * { box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; background-color: var(--pink-soft); margin: 0; color: #444; }
 
-/* Header */
-header { background: var(--pink-dark); color: white; text-align: center; padding: 40px 20px; }
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f0f0f0; /* Warna di luar area blog agar kontras */
+    margin: 0; 
+    color: #333; 
+}
 
-/* Container */
-.container { max-width: 900px; margin: 20px auto; padding: 0 15px; }
+/* Container Utama: Dikunci lebarnya agar tetap vertikal seperti HP */
+.main-wrapper {
+    max-width: 600px; /* Lebar maksimal konten seperti layar HP besar */
+    margin: 0 auto;   /* Memusatkan di tengah layar desktop */
+    background-color: var(--pink-soft); /* Warna background blog */
+    min-height: 100vh;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1); /* Bayangan di sisi kiri-kanan pada desktop */
+}
 
-/* Card Style (Index) */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.card img { width: 100%; height: 200px; object-fit: cover; }
-.card-body { padding: 20px; }
-.tag { background: var(--pink-soft); color: var(--pink-dark); padding: 4px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; }
-h2 { color: var(--pink-dark); margin: 10px 0; }
+header { 
+    background: var(--pink-dark); 
+    color: white; 
+    text-align: center; 
+    padding: 30px 20px; 
+}
 
-/* Buttons */
-.btn { display: inline-block; background: var(--pink-dark); color: white; padding: 10px 15px; text-decoration: none; border-radius: 8px; font-weight: bold; }
-.btn:hover { background: var(--pink-main); }
+.container { 
+    padding: 20px; 
+}
 
-/* Detail Article Style */
-.detail-content { background: white; padding: 30px; border-radius: 20px; line-height: 1.8; }
+/* Grid Artikel: Dipaksa tetap 1 kolom */
+.card-grid { 
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+}
+
+.card { 
+    background: white; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
+
+.card img { 
+    width: 100%; 
+    height: 250px; /* Lebih tinggi agar proporsional di desktop */
+    object-fit: cover; 
+}
+
+.card-body { padding: 25px; }
+
+.tag { 
+    background: var(--pink-soft); 
+    color: var(--pink-dark); 
+    padding: 5px 12px; 
+    border-radius: 8px; 
+    font-size: 13px; 
+    font-weight: bold; 
+}
+
+h2 { 
+    color: var(--pink-dark); 
+    margin: 15px 0; 
+    font-size: 1.6rem; /* Lebih besar sedikit */
+}
+
+p { line-height: 1.6; color: #555; }
+
+.btn { 
+    display: block; /* Tombol lebar penuh agar mudah diklik */
+    text-align: center;
+    background: var(--pink-dark); 
+    color: white; 
+    padding: 15px; 
+    text-decoration: none; 
+    border-radius: 12px; 
+    font-weight: bold; 
+    margin-top: 15px;
+}
+
+/* Detail Halaman */
+.detail-content { line-height: 1.8; }
 .detail-img { width: 100%; border-radius: 15px; margin-bottom: 20px; }
+
+hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
