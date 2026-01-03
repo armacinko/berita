@@ -38,5 +38,27 @@
             `;
         });
     </script>
+    <script>
+    // Fungsi untuk menambahkan nofollow secara otomatis pada link eksternal
+    function setNoFollow() {
+        const links = document.getElementsByTagName('a');
+        const currentDomain = window.location.hostname;
+
+        for (let i = 0; i < links.length; i++) {
+            const link = links[i];
+            // Jika link memiliki href dan tidak mengandung domain kita sendiri
+            if (link.href && !link.href.includes(currentDomain) && !link.href.startsWith('#')) {
+                link.setAttribute('rel', 'nofollow');
+                // Opsional: Membuka link di tab baru agar user tidak meninggalkan blog Anda
+                link.setAttribute('target', '_blank');
+            }
+        }
+    }
+
+    // Jalankan fungsi setelah semua artikel selesai dimuat
+    // Karena artikel dimuat dinamis, kita beri sedikit delay atau panggil setelah render
+    setTimeout(setNoFollow, 500);
+</script>
 </body>
 </html>
+
