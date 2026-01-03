@@ -8,7 +8,7 @@ const daftarArtikel = [
         tag: "Sarapan",
         judul: "Nasi Goreng Pink Spesial Buah Naga",
         cuplikan: "Panduan lengkap memasak nasi goreng estetik dengan warna pink alami dan topping melimpah...",
-        gambar: "https://images.unsplash.com/photo-1512058560366-c80b0426cbbd?w=800",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9dsWrL5HDjVPRAWFn2GJia-jKJ4KAaSYp83N16983KA&s",
         tanggal: "03 Januari 2026",
         isiLengkap: `
             <p>Nasi goreng ini bukan hanya cantik dipandang, tapi juga menyehatkan karena menggunakan pewarna alami dari buah naga merah. Sangat cocok untuk sajian keluarga di akhir pekan.</p>
@@ -63,3 +63,4 @@ const daftarArtikel = [
         `
     }
 ];
+
