@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resep Lengkap</title>
+    <title>Resep Lengkap - Dapur Pinky</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-wrapper">
         <div class="container">
-            <div style="margin: 10px 0 20px 0;">
-                <a href="index.html" style="color: var(--pink-dark); text-decoration: none; font-weight: bold;">← Kembali</a>
+            <div style="margin-bottom: 20px;">
+                <a href="index.html" style="color: var(--pink-dark); text-decoration: none; font-weight: bold;">← Kembali ke Beranda</a>
             </div>
             
             <div id="konten-lengkap" class="detail-content">
                 </div>
         </div>
+        <footer style="padding: 20px; text-align: center;">&copy; 2026 Dapur Pinky</footer>
     </div>
 
     <script src="data-artikel.js"></script>
@@ -25,71 +26,37 @@
         const artikel = daftarArtikel.find(item => item.id === idArt);
 
         if (artikel) {
-            document.title = artikel.judul;
+            // Tampilkan Konten
+            document.title = artikel.judul + " - Dapur Pinky";
             document.getElementById('konten-lengkap').innerHTML = `
                 <img src="${artikel.gambar}" class="detail-img">
                 <span class="tag">${artikel.tag}</span>
-                <h1 style="color:var(--pink-dark);">${artikel.judul}</h1>
-                <p><small>${artikel.tanggal}</small></p>
+                <h1 style="color:var(--pink-dark); margin-top:10px;">${artikel.judul}</h1>
+                <p><small>Dipublikasikan: ${artikel.tanggal}</small></p>
                 <hr>
                 <div class="isi-artikel">${artikel.isiLengkap}</div>
             `;
-        } else {
-            document.getElementById('konten-lengkap').innerHTML = "<h2>Resep tidak ditemukan.</h2>";
-        }
-    </script>
-    <script>
-    // Fungsi untuk menambahkan nofollow secara otomatis pada link eksternal
-    function setNoFollow() {
-        const links = document.getElementsByTagName('a');
-        const currentDomain = window.location.hostname;
 
-        for (let i = 0; i < links.length; i++) {
-            const link = links[i];
-            // Jika link memiliki href dan tidak mengandung domain kita sendiri
-            if (link.href && !link.href.includes(currentDomain) && !link.href.startsWith('#')) {
-                link.setAttribute('rel', 'nofollow');
-                // Opsional: Membuka link di tab baru agar user tidak meninggalkan blog Anda
-                link.setAttribute('target', '_blank');
-            }
-        }
-    }
-
-    // Jalankan fungsi setelah semua artikel selesai dimuat
-    // Karena artikel dimuat dinamis, kita beri sedikit delay atau panggil setelah render
-    setTimeout(setNoFollow, 500);
-</script>
-    <script src="data-artikel.js"></script>
-    <script>
-        // --- KODE LOGIKA ARTIKEL ---
-        const params = new URLSearchParams(window.location.search);
-        const idArt = params.get('id');
-        const artikel = daftarArtikel.find(item => item.id === idArt);
-
-        if (artikel) {
-            document.title = artikel.judul;
-            document.getElementById('konten-lengkap').innerHTML = `
-                <img src="${artikel.gambar}" class="detail-img">
-                <h1 style="color:var(--pink-dark);">${artikel.judul}</h1>
-                <div class="isi-artikel">${artikel.isiLengkap}</div>
-            `;
-
-            // --- 1. LETAKKAN SCHEMA.ORG DI SINI (Setelah artikel ditemukan) ---
+            // --- OTOMATISASI SCHEMA.ORG (JSON-LD) ---
             const schemaData = {
                 "@context": "https://schema.org/",
                 "@type": "Recipe",
                 "name": artikel.judul,
                 "description": artikel.cuplikan,
                 "image": [artikel.gambar],
-                "author": { "@type": "Person", "name": "Dapur Pinky" }
+                "author": { "@type": "Person", "name": "Admin Dapur Pinky" },
+                "datePublished": "2026-01-03",
+                "recipeCategory": artikel.tag
             };
             const scriptSchema = document.createElement('script');
             scriptSchema.type = 'application/ld+json';
             scriptSchema.text = JSON.stringify(schemaData);
             document.head.appendChild(scriptSchema);
+        } else {
+            document.getElementById('konten-lengkap').innerHTML = "<h2>Maaf, resep tidak ditemukan.</h2>";
         }
 
-        // --- 2. LETAKKAN NOFOLLOW DI SINI ---
+        // Fitur NoFollow Otomatis
         const links = document.getElementsByTagName('a');
         for (let i = 0; i < links.length; i++) {
             if (links[i].hostname !== window.location.hostname) {
@@ -98,14 +65,11 @@
             }
         }
 
-        // --- 3. LETAKKAN BLOKIR KLIK KANAN DI SINI ---
+        // Fitur Blokir Klik Kanan & Keyboard (Inspek)
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.onkeydown = e => {
-            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73)) return false;
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || (e.ctrlKey && e.keyCode == 85)) return false;
         };
     </script>
-</body> </html>
 </body>
 </html>
-
-
