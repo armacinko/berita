@@ -4,7 +4,7 @@ const daftarArtikel = [
         tag: "Sarapan",
         judul: "Nasi Goreng Pink Buah Naga",
         cuplikan: "Nasi goreng unik dengan warna merah muda alami yang menggugah selera...",
-        gambar: "https://images.unsplash.com/photo-1512058560366-c80b0426cbbd?w=600",
+        gambar: "https://pbs.twimg.com/media/G80RJukagAIsbce.jpg",
         tanggal: "03 Januari 2026",
         isiLengkap: `
             <p>Nasi goreng ini mendapatkan warna pink cantik dari buah naga merah. Rasanya gurih dan tampilannya sangat estetik untuk menu sarapan keluarga.</p>
@@ -73,4 +73,5 @@ const daftarArtikel = [
             </ol>
         `
     }
+
 ];
