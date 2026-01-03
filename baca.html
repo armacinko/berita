@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resep Lengkap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div style="margin: 20px 0;"><a href="index.html" style="color: var(--pink-dark); text-decoration: none;">← Kembali ke Beranda</a></div>
+        
+        <div id="konten-lengkap" class="detail-content">
+            </div>
+    </div>
+
+    <script src="data-artikel.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const idArt = params.get('id');
+        const artikel = daftarArtikel.find(item => item.id === idArt);
+
+        if (artikel) {
+            document.title = artikel.judul;
+            document.getElementById('konten-lengkap').innerHTML = `
+                <img src="${artikel.gambar}" class="detail-img">
+                <span class="tag">${artikel.tag}</span>
+                <h1>${artikel.judul}</h1>
+                <p><small>${artikel.tanggal}</small></p>
+                <hr>
+                <div>${artikel.isiLengkap}</div>
+            `;
+        } else {
+            document.getElementById('konten-lengkap').innerHTML = "<h2>Artikel tidak ditemukan.</h2>";
+        }
+    </script>
+</body>
+</html>

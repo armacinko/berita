@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapur Pinky - Resep Rumahan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎀 Dapur Pinky 🎀</h1>
+        <p>Inspirasi Masak Setiap Hari</p>
+    </header>
+
+    <div class="container">
+        <div id="daftar-artikel" class="card-grid"></div>
+    </div>
+
+    <script src="data-artikel.js"></script>
+    <script>
+        const container = document.getElementById('daftar-artikel');
+        daftarArtikel.forEach(art => {
+            container.innerHTML += `
+                <div class="card">
+                    <img src="${art.gambar}" alt="${art.judul}">
+                    <div class="card-body">
+                        <span class="tag">${art.tag}</span>
+                        <h2>${art.judul}</h2>
+                        <p>${art.cuplikan}</p>
+                        <a href="baca.html?id=${art.id}" class="btn">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
