@@ -3,73 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resep Lengkap - Dapur Pinky</title>
+    <title>Detail - Dapur Pinky</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-wrapper">
         <div class="container">
-            <div style="margin-bottom: 20px;">
-                <a href="index.html" style="color: var(--pink-dark); text-decoration: none; font-weight: bold;">← Kembali ke Beranda</a>
-            </div>
-            
-            <div id="konten-lengkap" class="detail-content">
-                </div>
+            <a href="index.html" style="color:var(--pink-dark); text-decoration:none; font-weight:bold;">← Kembali</a>
+            <div id="konten-lengkap" class="detail-content" style="margin-top:20px;"></div>
         </div>
-        <footer style="padding: 20px; text-align: center;">&copy; 2026 Dapur Pinky</footer>
+        <footer>&copy; 2026 Dapur Pinky</footer>
     </div>
 
     <script src="data-artikel.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
-        const idArt = params.get('id');
-        const artikel = daftarArtikel.find(item => item.id === idArt);
+        const artikel = daftarArtikel.find(item => item.id === params.get('id'));
 
         if (artikel) {
-            // Tampilkan Konten
-            document.title = artikel.judul + " - Dapur Pinky";
+            document.title = artikel.judul;
             document.getElementById('konten-lengkap').innerHTML = `
                 <img src="${artikel.gambar}" class="detail-img">
                 <span class="tag">${artikel.tag}</span>
-                <h1 style="color:var(--pink-dark); margin-top:10px;">${artikel.judul}</h1>
-                <p><small>Dipublikasikan: ${artikel.tanggal}</small></p>
-                <hr>
+                <h1>${artikel.judul}</h1>
+                <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
                 <div class="isi-artikel">${artikel.isiLengkap}</div>
             `;
 
-            // --- OTOMATISASI SCHEMA.ORG (JSON-LD) ---
+            // --- SISTEM SCHEMA OTOMATIS BERDASARKAN TAG ---
+            let type = "Article";
+            if (artikel.tag.toLowerCase() === "resep") type = "Recipe";
+            if (artikel.tag.toLowerCase() === "berita") type = "NewsArticle";
+
             const schemaData = {
                 "@context": "https://schema.org/",
-                "@type": "Recipe",
-                "name": artikel.judul,
-                "description": artikel.cuplikan,
+                "@type": type,
+                "headline": artikel.judul,
                 "image": [artikel.gambar],
-                "author": { "@type": "Person", "name": "Admin Dapur Pinky" },
-                "datePublished": "2026-01-03",
-                "recipeCategory": artikel.tag
+                "datePublished": artikel.tanggal,
+                "description": artikel.cuplikan,
+                "author": { "@type": "Person", "name": "Admin Dapur Pinky" }
             };
-            const scriptSchema = document.createElement('script');
-            scriptSchema.type = 'application/ld+json';
-            scriptSchema.text = JSON.stringify(schemaData);
-            document.head.appendChild(scriptSchema);
-        } else {
-            document.getElementById('konten-lengkap').innerHTML = "<h2>Maaf, resep tidak ditemukan.</h2>";
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify(schemaData);
+            document.head.appendChild(script);
         }
 
-        // Fitur NoFollow Otomatis
-        const links = document.getElementsByTagName('a');
-        for (let i = 0; i < links.length; i++) {
-            if (links[i].hostname !== window.location.hostname) {
-                links[i].setAttribute('rel', 'nofollow');
-                links[i].setAttribute('target', '_blank');
-            }
-        }
-
-        // Fitur Blokir Klik Kanan & Keyboard (Inspek)
+        // PROTEKSI ANTI-COPY & NOFOLLOW
         document.addEventListener('contextmenu', e => e.preventDefault());
-        document.onkeydown = e => {
-            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || (e.ctrlKey && e.keyCode == 85)) return false;
-        };
+        const links = document.getElementsByTagName('a');
+        for (let l of links) { 
+            if (l.hostname !== window.location.hostname) { 
+                l.rel = "nofollow"; 
+                l.target = "_blank"; 
+            } 
+        }
     </script>
 </body>
 </html>
