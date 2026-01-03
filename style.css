@@ -1,61 +1,79 @@
-/* --- 1. SETTING WARNA & DASAR --- */
+/* BLOG DAPUR PINKY - FULL CONFIGURATION
+   Fitur: Responsive Mobile-First, Anti-Copy, Anti-Klik Kanan, 
+   Vertical Layout, & Media Support (Gambar/Video).
+*/
+
 :root {
-    --pink-dark: #d81b60;
-    --pink-main: #ff85a1;
-    --pink-soft: #fff0f3;
+    --pink-dark: #d81b60;   /* Pink Tua untuk Judul & Tombol */
+    --pink-main: #ff85a1;   /* Pink Sedang untuk Aksen */
+    --pink-soft: #fff0f3;   /* Pink Sangat Muda untuk Background Content */
+    --bg-outside: #f0f0f0;  /* Abu-abu untuk latar luar (Desktop) */
 }
 
-* { box-sizing: border-box; }
+* { 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color: transparent; /* Hapus warna biru saat klik di HP */
+}
 
-/* --- 2. FITUR BLOKIR SELEKSI TEKS --- */
+/* --- DASAR & ANTI COPY --- */
 body { 
-    font-family: 'Segoe UI', sans-serif; 
-    background-color: #f0f0f0; /* Latar belakang luar */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    background-color: var(--bg-outside); 
     margin: 0; 
     color: #333; 
+    line-height: 1.6;
 
-    /* KODE ANTI COPY-PASTE */
-    -webkit-user-select: none;  /* Chrome, Safari, Opera */
-    -moz-user-select: none;     /* Firefox */
-    -ms-user-select: none;      /* IE/Edge */
-    user-select: none;          /* Standard */
+    /* Mematikan Seleksi Teks (Anti-Copy) */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Mematikan menu pop-up tekan lama di HP */
+    -webkit-touch-callout: none;
 }
 
-/* --- 3. LAYOUT VERTIKAL (MENGUNCI TAMPILAN SEPERTI HP) --- */
+/* --- WRAPPER (MENGUNCI TAMPILAN VERTIKAL) --- */
 .main-wrapper {
-    max-width: 600px; /* Dikunci agar tetap vertikal di tengah PC */
-    margin: 0 auto;
+    max-width: 600px; /* Lebar maksimal seukuran HP besar */
+    margin: 0 auto;   /* Memusatkan di tengah layar PC */
     background-color: var(--pink-soft);
     min-height: 100vh;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
 }
 
+/* --- HEADER --- */
 header { 
     background: var(--pink-dark); 
     color: white; 
     text-align: center; 
-    padding: 30px 20px; 
+    padding: 40px 20px; 
 }
 
+header h1 { margin: 0; font-size: 1.8rem; }
+header p { margin: 5px 0 0; opacity: 0.9; font-size: 0.9rem; }
+
+/* --- CONTAINER --- */
 .container { padding: 20px; }
 
-/* --- 4. TAMPILAN KARTU ARTIKEL --- */
-.card-grid { display: flex; flex-direction: column; gap: 20px; }
+/* --- KARTU ARTIKEL (INDEX) --- */
+.card-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 25px; 
+}
 
 .card { 
     background: white; 
-    border-radius: 15px; 
+    border-radius: 20px; 
     overflow: hidden; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
 }
 
 .card img { 
     width: 100%; 
     height: 250px; 
     object-fit: cover; 
-    /* Mencegah gambar di-drag/seret */
-    -webkit-user-drag: none;
-    user-drag: none;
+    pointer-events: none; /* Anti download gambar */
 }
 
 .card-body { padding: 20px; }
@@ -63,28 +81,91 @@ header {
 .tag { 
     background: var(--pink-soft); 
     color: var(--pink-dark); 
-    padding: 5px 10px; 
+    padding: 5px 12px; 
     border-radius: 8px; 
-    font-size: 12px; 
+    font-size: 11px; 
     font-weight: bold; 
+    text-transform: uppercase;
 }
 
-h2 { color: var(--pink-dark); margin: 15px 0 10px; }
+h2 { color: var(--pink-dark); margin: 15px 0 10px; font-size: 1.5rem; }
 
+/* --- TOMBOL --- */
 .btn { 
     display: block; 
     text-align: center; 
     background: var(--pink-dark); 
     color: white; 
-    padding: 12px; 
+    padding: 15px; 
     text-decoration: none; 
-    border-radius: 10px; 
+    border-radius: 12px; 
     font-weight: bold; 
+    transition: 0.3s;
 }
 
-/* --- 5. TAMPILAN HALAMAN BACA --- */
-.detail-content { line-height: 1.8; font-size: 1.05rem; }
-.detail-img { width: 100%; border-radius: 15px; margin-bottom: 20px; }
-.isi-artikel h3 { color: var(--pink-dark); margin-top: 25px; }
+.btn:hover { background: var(--pink-main); }
 
-footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
+/* --- HALAMAN BACA (DETAIL) --- */
+.detail-content { background: white; padding: 25px; border-radius: 20px; }
+
+.detail-img { 
+    width: 100%; 
+    border-radius: 15px; 
+    margin-bottom: 20px; 
+    pointer-events: none;
+}
+
+/* Gaya Tulisan di Dalam Artikel */
+.isi-artikel { font-size: 1.05rem; color: #444; }
+
+.isi-artikel h3 { 
+    color: var(--pink-dark); 
+    margin-top: 30px; 
+    border-left: 5px solid var(--pink-main); 
+    padding-left: 15px;
+    font-size: 1.3rem;
+}
+
+/* --- MEDIA DI DALAM ARTIKEL (GAMBAR & VIDEO) --- */
+.img-konten {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px 0;
+    display: block;
+    pointer-events: none;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Rasio 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 20px 0;
+    border-radius: 15px;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+}
+
+/* --- FOOTER --- */
+footer { 
+    text-align: center; 
+    padding: 30px; 
+    color: #999; 
+    font-size: 0.8rem; 
+}
+
+/* Link Navigasi Kembali */
+.nav-back {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--pink-dark);
+    text-decoration: none;
+    font-weight: bold;
+}
