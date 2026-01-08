@@ -3,42 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dapur Pinky - Premium Blog</title>
+    <title>Dapur Pinky - Beranda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-wrapper">
-        <header>
-            <h1>Dapur Pinky</h1>
-            <p>Eksplorasi Resep dengan Kualitas Tinggi</p>
-        </header>
+        <header><h1>Dapur Pinky</h1></header>
         <div class="container">
             <div id="daftar-artikel" class="card-grid"></div>
         </div>
-        <footer>&copy; 2026 Dapur Pinky - Premium Recipes</footer>
+        <footer>&copy; 2026 Dapur Pinky</footer>
     </div>
 
     <script src="data-artikel.js"></script>
     <script>
         const container = document.getElementById('daftar-artikel');
-        daftarArtikel.forEach(art => {
-            container.innerHTML += `
-                <div class="card">
-                    <img src="${art.gambar}" alt="${art.judul}">
-                    <div class="card-body">
-                        <span class="tag">${art.tag}</span>
-                        <h2>${art.judul}</h2>
-                        <p>${art.cuplikan}</p>
-                        <a href="baca.html?id=${art.id}" class="btn">Lihat Selengkapnya</a>
+        
+        if (typeof daftarArtikel !== 'undefined') {
+            daftarArtikel.forEach(art => {
+                container.innerHTML += `
+                    <div class="card">
+                        <img src="${art.gambar}">
+                        <div class="card-body">
+                            <span class="tag">${art.tag}</span>
+                            <h2>${art.judul}</h2>
+                            <p>${art.cuplikan}</p>
+                            <a href="baca.html?id=${art.id}" class="btn">Lihat Selengkapnya</a>
+                        </div>
                     </div>
-                </div>
-            `;
-        });
-
-        // PROTEKSI
+                `;
+            });
+        }
         document.addEventListener('contextmenu', e => e.preventDefault());
-        const links = document.getElementsByTagName('a');
-        for (let l of links) { if (l.hostname !== window.location.hostname) l.rel = "nofollow"; }
     </script>
 </body>
 </html>
