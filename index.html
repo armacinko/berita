@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dapur Pinky - Resep Pilihan</title>
+    <title>Dapur Pinky - Blog Masak</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-wrapper">
         <header>
             <h1>🎀 Dapur Pinky 🎀</h1>
-            <p>Resep Rumahan Praktis & Estetik</p>
+            <p>Inspirasi Masak & Info Terkini</p>
         </header>
-
         <div class="container">
-            <div id="daftar-artikel" class="card-grid">
-                </div>
+            <div id="daftar-artikel" class="card-grid"></div>
         </div>
-
         <footer>&copy; 2026 Dapur Pinky</footer>
     </div>
 
     <script src="data-artikel.js"></script>
     <script>
         const container = document.getElementById('daftar-artikel');
-        
-        // Render Artikel
         daftarArtikel.forEach(art => {
             container.innerHTML += `
                 <div class="card">
@@ -34,26 +29,16 @@
                         <span class="tag">${art.tag}</span>
                         <h2>${art.judul}</h2>
                         <p>${art.cuplikan}</p>
-                        <a href="baca.html?id=${art.id}" class="btn">Baca Resep Lengkap</a>
+                        <a href="baca.html?id=${art.id}" class="btn">Baca Selengkapnya</a>
                     </div>
                 </div>
             `;
         });
 
-        // Fitur NoFollow Otomatis
-        const links = document.getElementsByTagName('a');
-        for (let i = 0; i < links.length; i++) {
-            if (links[i].hostname !== window.location.hostname) {
-                links[i].setAttribute('rel', 'nofollow');
-                links[i].setAttribute('target', '_blank');
-            }
-        }
-
-        // Fitur Blokir Klik Kanan & Keyboard (Inspek)
+        // PROTEKSI ANTI-COPY & NOFOLLOW
         document.addEventListener('contextmenu', e => e.preventDefault());
-        document.onkeydown = e => {
-            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || (e.ctrlKey && e.keyCode == 85)) return false;
-        };
+        const links = document.getElementsByTagName('a');
+        for (let l of links) { if (l.hostname !== window.location.hostname) l.rel = "nofollow"; }
     </script>
 </body>
 </html>
