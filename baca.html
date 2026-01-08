@@ -2,43 +2,52 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Dapur Pinky</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-wrapper">
         <div class="container">
-            <a href="index.html" style="color:var(--pink-dark); text-decoration:none; font-weight:bold; font-size: 1.2rem;">← Kembali ke Beranda</a>
-            <div id="konten-lengkap" class="detail-content" style="margin-top:50px;"></div>
+            <a href="index.html" style="color:var(--pink-dark); text-decoration:none; font-weight:bold;">← Kembali ke Daftar</a>
+            
+            <div id="konten-lengkap" style="margin-top:30px;">
+                </div>
         </div>
         <footer>&copy; 2026 Dapur Pinky</footer>
     </div>
 
     <script src="data-artikel.js"></script>
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const artikel = daftarArtikel.find(item => item.id === params.get('id'));
+        function tampilkanArtikel() {
+            // Mengambil ID dari URL Hash (#)
+            const idArt = window.location.hash.substring(1); 
+            const artikel = daftarArtikel.find(item => item.id === idArt);
+            const target = document.getElementById('konten-lengkap');
 
-        if (artikel) {
-            document.title = artikel.judul;
-            document.getElementById('konten-lengkap').innerHTML = `
-                <span class="tag">${artikel.tag}</span>
-                <h1>${artikel.judul}</h1>
-                <p style="color:#888; margin-bottom:40px;">Dipublikasikan: ${artikel.tanggal}</p>
-                <img src="${artikel.gambar}" class="detail-img">
-                <div class="isi-artikel">${artikel.isiLengkap}</div>
-            `;
+            if (artikel) {
+                document.title = artikel.judul + " - Dapur Pinky";
+                target.innerHTML = `
+                    <article>
+                        <span class="tag">${artikel.tag}</span>
+                        <h1>${artikel.judul}</h1>
+                        <p style="color:#777; font-size:0.9rem;">Diterbitkan: ${artikel.tanggal}</p>
+                        <img src="${artikel.gambar}" class="detail-img" alt="${artikel.judul}">
+                        <div class="isi-artikel">${artikel.isiLengkap}</div>
+                    </article>
+                `;
+            } else {
+                target.innerHTML = "<h2>Resep tidak ditemukan.</h2><a href='index.html'>Kembali ke Home</a>";
+            }
+            window.scrollTo(0,0);
         }
 
+        // Jalankan saat load & saat hash berubah
+        window.onload = tampilkanArtikel;
+        window.onhashchange = tampilkanArtikel;
+
+        // Anti Klik Kanan
         document.addEventListener('contextmenu', e => e.preventDefault());
-        const links = document.getElementsByTagName('a');
-        for (let l of links) { 
-            if (l.hostname !== window.location.hostname) { 
-                l.rel = "nofollow"; 
-                l.target = "_blank"; 
-            } 
-        }
     </script>
 </body>
 </html>
