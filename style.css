@@ -1,171 +1,67 @@
-/* BLOG DAPUR PINKY - FULL CONFIGURATION
-   Fitur: Responsive Mobile-First, Anti-Copy, Anti-Klik Kanan, 
-   Vertical Layout, & Media Support (Gambar/Video).
-*/
-
 :root {
-    --pink-dark: #d81b60;   /* Pink Tua untuk Judul & Tombol */
-    --pink-main: #ff85a1;   /* Pink Sedang untuk Aksen */
-    --pink-soft: #fff0f3;   /* Pink Sangat Muda untuk Background Content */
-    --bg-outside: #f0f0f0;  /* Abu-abu untuk latar luar (Desktop) */
+    --pink-dark: #d81b60;
+    --pink-main: #ff85a1;
+    --pink-soft: #fff0f3;
+    /* Font Fluid: Minimal 16px di HP, Maksimal 20px di Desktop */
+    --font-size-base: clamp(16px, 1.2vw + 14px, 20px);
 }
 
-* { 
-    box-sizing: border-box; 
-    -webkit-tap-highlight-color: transparent; /* Hapus warna biru saat klik di HP */
-}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-/* --- DASAR & ANTI COPY --- */
 body { 
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-    background-color: var(--bg-outside); 
+    background-color: #f0f0f0; 
     margin: 0; 
     color: #333; 
-    line-height: 1.6;
-
-    /* Mematikan Seleksi Teks (Anti-Copy) */
+    line-height: 1.7; /* Jarak baris lebih lega agar enak dibaca */
+    font-size: var(--font-size-base);
+    
+    /* ANTI COPY & SELEKSI */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /* Mematikan menu pop-up tekan lama di HP */
     -webkit-touch-callout: none;
 }
 
-/* --- WRAPPER (MENGUNCI TAMPILAN VERTIKAL) --- */
 .main-wrapper {
-    max-width: 600px; /* Lebar maksimal seukuran HP besar */
-    margin: 0 auto;   /* Memusatkan di tengah layar PC */
+    max-width: 650px; /* Sedikit lebih lebar agar font besar tidak sesak */
+    margin: 0 auto;
     background-color: var(--pink-soft);
     min-height: 100vh;
-    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
 }
 
-/* --- HEADER --- */
-header { 
-    background: var(--pink-dark); 
-    color: white; 
-    text-align: center; 
-    padding: 40px 20px; 
-}
+header { background: var(--pink-dark); color: white; text-align: center; padding: 50px 20px; }
+header h1 { font-size: 2.2rem; margin: 0; }
 
-header h1 { margin: 0; font-size: 1.8rem; }
-header p { margin: 5px 0 0; opacity: 0.9; font-size: 0.9rem; }
+.container { padding: 25px; }
 
-/* --- CONTAINER --- */
-.container { padding: 20px; }
+/* KARTU ARTIKEL */
+.card-grid { display: flex; flex-direction: column; gap: 30px; }
+.card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.card img { width: 100%; height: 280px; object-fit: cover; pointer-events: none; }
+.card-body { padding: 25px; }
 
-/* --- KARTU ARTIKEL (INDEX) --- */
-.card-grid { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 25px; 
-}
+.tag { background: var(--pink-soft); color: var(--pink-dark); padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: bold; text-transform: uppercase; }
+h2 { color: var(--pink-dark); margin: 15px 0; font-size: 1.8rem; line-height: 1.3; }
 
-.card { 
-    background: white; 
-    border-radius: 20px; 
-    overflow: hidden; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
-}
-
-.card img { 
-    width: 100%; 
-    height: 250px; 
-    object-fit: cover; 
-    pointer-events: none; /* Anti download gambar */
-}
-
-.card-body { padding: 20px; }
-
-.tag { 
-    background: var(--pink-soft); 
-    color: var(--pink-dark); 
-    padding: 5px 12px; 
-    border-radius: 8px; 
-    font-size: 11px; 
-    font-weight: bold; 
-    text-transform: uppercase;
-}
-
-h2 { color: var(--pink-dark); margin: 15px 0 10px; font-size: 1.5rem; }
-
-/* --- TOMBOL --- */
 .btn { 
-    display: block; 
-    text-align: center; 
-    background: var(--pink-dark); 
-    color: white; 
-    padding: 15px; 
-    text-decoration: none; 
-    border-radius: 12px; 
-    font-weight: bold; 
-    transition: 0.3s;
+    display: block; text-align: center; background: var(--pink-dark); 
+    color: white; padding: 18px; text-decoration: none; 
+    border-radius: 12px; font-weight: bold; font-size: 1.1rem;
 }
 
-.btn:hover { background: var(--pink-main); }
+/* HALAMAN BACA */
+.detail-content { background: white; padding: 30px; border-radius: 20px; }
+.detail-img { width: 100%; border-radius: 15px; margin-bottom: 25px; pointer-events: none; }
+h1 { font-size: 2.2rem; line-height: 1.2; color: var(--pink-dark); }
 
-/* --- HALAMAN BACA (DETAIL) --- */
-.detail-content { background: white; padding: 25px; border-radius: 20px; }
+.isi-artikel { font-size: 1.1rem; } /* Font isi artikel dibuat lebih mantap */
+.isi-artikel h3 { color: var(--pink-dark); border-left: 6px solid var(--pink-main); padding-left: 15px; margin-top: 35px; font-size: 1.5rem; }
 
-.detail-img { 
-    width: 100%; 
-    border-radius: 15px; 
-    margin-bottom: 20px; 
-    pointer-events: none;
-}
+.img-konten { width: 100%; border-radius: 12px; margin: 25px 0; pointer-events: none; }
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 25px 0; border-radius: 15px; background: #000; }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-/* Gaya Tulisan di Dalam Artikel */
-.isi-artikel { font-size: 1.05rem; color: #444; }
-
-.isi-artikel h3 { 
-    color: var(--pink-dark); 
-    margin-top: 30px; 
-    border-left: 5px solid var(--pink-main); 
-    padding-left: 15px;
-    font-size: 1.3rem;
-}
-
-/* --- MEDIA DI DALAM ARTIKEL (GAMBAR & VIDEO) --- */
-.img-konten {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin: 20px 0;
-    display: block;
-    pointer-events: none;
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Rasio 16:9 */
-    height: 0;
-    overflow: hidden;
-    margin: 20px 0;
-    border-radius: 15px;
-    background: #000;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: 0;
-}
-
-/* --- FOOTER --- */
-footer { 
-    text-align: center; 
-    padding: 30px; 
-    color: #999; 
-    font-size: 0.8rem; 
-}
-
-/* Link Navigasi Kembali */
-.nav-back {
-    display: inline-block;
-    margin-bottom: 15px;
-    color: var(--pink-dark);
-    text-decoration: none;
-    font-weight: bold;
-}
+footer { text-align: center; padding: 40px; color: #999; font-size: 14px; }
