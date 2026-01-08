@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail - Dapur Pinky</title>
+    <title>Dapur Pinky</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-wrapper">
         <div class="container">
-            <a href="index.html" style="color:var(--pink-dark); text-decoration:none; font-weight:bold; font-size: 1.1rem;">← Kembali ke Beranda</a>
-            <div id="konten-lengkap" class="detail-content" style="margin-top:25px;"></div>
+            <a href="index.html" style="color:var(--pink-dark); text-decoration:none; font-weight:bold; font-size: 1.2rem;">← Kembali ke Beranda</a>
+            <div id="konten-lengkap" class="detail-content" style="margin-top:50px;"></div>
         </div>
         <footer>&copy; 2026 Dapur Pinky</footer>
     </div>
@@ -23,18 +23,14 @@
         if (artikel) {
             document.title = artikel.judul;
             document.getElementById('konten-lengkap').innerHTML = `
-                <img src="${artikel.gambar}" class="detail-img">
                 <span class="tag">${artikel.tag}</span>
                 <h1>${artikel.judul}</h1>
-                <p style="color:#888; font-size:0.9rem;">Diterbitkan pada: ${artikel.tanggal}</p>
-                <hr style="border:0; border-top:1px solid #eee; margin:25px 0;">
+                <p style="color:#888; margin-bottom:40px;">Dipublikasikan: ${artikel.tanggal}</p>
+                <img src="${artikel.gambar}" class="detail-img">
                 <div class="isi-artikel">${artikel.isiLengkap}</div>
             `;
-        } else {
-            document.getElementById('konten-lengkap').innerHTML = "<h2>Artikel tidak ditemukan.</h2>";
         }
 
-        // PROTEKSI ANTI-COPY & NOFOLLOW
         document.addEventListener('contextmenu', e => e.preventDefault());
         const links = document.getElementsByTagName('a');
         for (let l of links) { 
