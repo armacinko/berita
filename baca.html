@@ -2,16 +2,18 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Dapur Pinky</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Resep - Dapur Pinky</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-wrapper">
         <div class="container">
-            <a href="index.html" style="color:var(--pink-dark); text-decoration:none; font-weight:bold;">← Kembali ke Daftar</a>
+            <div style="margin-bottom:20px;">
+                <a href="index.html" style="color:var(--pink-dark); text-decoration:none; font-weight:bold;">← Kembali ke Beranda</a>
+            </div>
             
-            <div id="konten-lengkap" style="margin-top:30px;">
+            <div id="konten-lengkap">
                 </div>
         </div>
         <footer>&copy; 2026 Dapur Pinky</footer>
@@ -19,32 +21,41 @@
 
     <script src="data-artikel.js"></script>
     <script>
-        function tampilkanArtikel() {
-            // Mengambil ID dari URL Hash (#)
-            const idArt = window.location.hash.substring(1); 
+        function muatArtikelDariUrl() {
+            // 1. Ambil Parameter "id" dari URL (baca.html?id=xxx)
+            const urlParams = new URLSearchParams(window.location.search);
+            const idArt = urlParams.get('id'); 
+            
+            // 2. Cari data di data-artikel.js yang id-nya cocok
             const artikel = daftarArtikel.find(item => item.id === idArt);
-            const target = document.getElementById('konten-lengkap');
+            const areaKonten = document.getElementById('konten-lengkap');
 
             if (artikel) {
-                document.title = artikel.judul + " - Dapur Pinky";
-                target.innerHTML = `
-                    <article>
-                        <span class="tag">${artikel.tag}</span>
-                        <h1>${artikel.judul}</h1>
-                        <p style="color:#777; font-size:0.9rem;">Diterbitkan: ${artikel.tanggal}</p>
-                        <img src="${artikel.gambar}" class="detail-img" alt="${artikel.judul}">
-                        <div class="isi-artikel">${artikel.isiLengkap}</div>
-                    </article>
+                // 3. Tampilkan jika ditemukan
+                document.title = artikel.judul;
+                areaKonten.innerHTML = `
+                    <span class="tag">${artikel.tag}</span>
+                    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); line-height:1.1; margin: 15px 0;">${artikel.judul}</h1>
+                    <p style="color:#888;">Update: ${artikel.tanggal}</p>
+                    <img src="${artikel.gambar}" class="detail-img" style="width:100%; border-radius:20px; margin:20px 0;">
+                    <div class="isi-artikel" style="font-size:1.2rem;">${artikel.isiLengkap}</div>
                 `;
             } else {
-                target.innerHTML = "<h2>Resep tidak ditemukan.</h2><a href='index.html'>Kembali ke Home</a>";
+                // 4. Pesan Error jika tidak ditemukan
+                areaKonten.innerHTML = `
+                    <div style="text-align:center; padding:50px; border: 2px dashed #ccc; border-radius:20px;">
+                        <h2>Aduhh! Resep Tidak Ditemukan</h2>
+                        <p>Kami tidak menemukan konten dengan ID: <br><span style="color:red; font-weight:bold;">${idArt}</span></p>
+                        <p>Pastikan ID di data-artikel.js sama persis dengan linknya.</p>
+                        <br>
+                        <a href="index.html" class="btn">Kembali ke Beranda</a>
+                    </div>
+                `;
             }
-            window.scrollTo(0,0);
         }
 
-        // Jalankan saat load & saat hash berubah
-        window.onload = tampilkanArtikel;
-        window.onhashchange = tampilkanArtikel;
+        // Jalankan fungsi segera setelah halaman terbuka
+        window.onload = muatArtikelDariUrl;
 
         // Anti Klik Kanan
         document.addEventListener('contextmenu', e => e.preventDefault());
