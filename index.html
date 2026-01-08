@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dapur Pinky - Blog Masak</title>
+    <title>Dapur Pinky - Premium Blog</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-wrapper">
         <header>
-            <h1>🎀 Dapur Pinky 🎀</h1>
-            <p>Inspirasi Masak & Info Terkini</p>
+            <h1>Dapur Pinky</h1>
+            <p>Eksplorasi Resep dengan Kualitas Tinggi</p>
         </header>
         <div class="container">
             <div id="daftar-artikel" class="card-grid"></div>
         </div>
-        <footer>&copy; 2026 Dapur Pinky</footer>
+        <footer>&copy; 2026 Dapur Pinky - Premium Recipes</footer>
     </div>
 
     <script src="data-artikel.js"></script>
@@ -29,13 +29,13 @@
                         <span class="tag">${art.tag}</span>
                         <h2>${art.judul}</h2>
                         <p>${art.cuplikan}</p>
-                        <a href="baca.html?id=${art.id}" class="btn">Baca Selengkapnya</a>
+                        <a href="baca.html?id=${art.id}" class="btn">Lihat Selengkapnya</a>
                     </div>
                 </div>
             `;
         });
 
-        // PROTEKSI ANTI-COPY & NOFOLLOW
+        // PROTEKSI
         document.addEventListener('contextmenu', e => e.preventDefault());
         const links = document.getElementsByTagName('a');
         for (let l of links) { if (l.hostname !== window.location.hostname) l.rel = "nofollow"; }
