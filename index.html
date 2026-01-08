@@ -18,15 +18,14 @@
     <script src="data-artikel.js"></script>
     <script>
         const container = document.getElementById('daftar-artikel');
-        
         if (typeof daftarArtikel !== 'undefined') {
             daftarArtikel.forEach(art => {
                 container.innerHTML += `
                     <div class="card">
                         <img src="${art.gambar}">
                         <div class="card-body">
-                            <span class="tag">${art.tag}</span>
-                            <h2>${art.judul}</h2>
+                            <br><span class="tag">${art.tag}</span>
+                            <div class="title-wrapper"><h2>${art.judul}</h2></div>
                             <p>${art.cuplikan}</p>
                             <a href="baca.html?id=${art.id}" class="btn">Lihat Selengkapnya</a>
                         </div>
@@ -34,7 +33,6 @@
                 `;
             });
         }
-        document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
 </html>
