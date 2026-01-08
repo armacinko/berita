@@ -29,28 +29,9 @@
                 <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
                 <div class="isi-artikel">${artikel.isiLengkap}</div>
             `;
-
-            // --- SISTEM SCHEMA OTOMATIS BERDASARKAN TAG ---
-            let type = "Article";
-            if (artikel.tag.toLowerCase() === "resep") type = "Recipe";
-            if (artikel.tag.toLowerCase() === "berita") type = "NewsArticle";
-
-            const schemaData = {
-                "@context": "https://schema.org/",
-                "@type": type,
-                "headline": artikel.judul,
-                "image": [artikel.gambar],
-                "datePublished": artikel.tanggal,
-                "description": artikel.cuplikan,
-                "author": { "@type": "Person", "name": "Admin Dapur Pinky" }
-            };
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.text = JSON.stringify(schemaData);
-            document.head.appendChild(script);
         }
 
-        // PROTEKSI ANTI-COPY & NOFOLLOW
+        // --- PROTEKSI ANTI-COPY & NOFOLLOW (TETAP ADA) ---
         document.addEventListener('contextmenu', e => e.preventDefault());
         const links = document.getElementsByTagName('a');
         for (let l of links) { 
