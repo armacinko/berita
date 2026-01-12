@@ -4,7 +4,7 @@ const daftarArtikel = [
         tag: "samsung galaxy a57 5g",
         judul: "Update Harga Cabai Hari Ini",
         cuplikan: "samsung galaxy a57 5g merupakan hp cukup handak untuk....",
-        gambar: "https://pbs.twimg.com/card_img/2007754012154580994/nwxElc4W?format=jpg",
+        gambar: "https://pbs.twimg.com/card_img/2007754012154580994/nwxElc4W?format=jpg&name=medium",
         tanggal: "2026-01-12",
         isiLengkap: `
       <h1>Pengalaman Saya Menggunakan Samsung Galaxy A57 5G: Smartphone Kelas Menengah yang Layak Dimiliki</h1>
@@ -104,5 +104,6 @@ Dalam artikel ini, saya akan membagikan pengalaman mendalam saya menggunakan Sam
         isiLengkap: `<p>Harga cabai mengalami kenaikan karena faktor cuaca...</p>`
     }
 ];
+
 
 
