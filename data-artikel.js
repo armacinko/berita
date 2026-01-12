@@ -2,12 +2,12 @@ const daftarArtikel = [
     {
         id: "review-jujur-samsung-galaxy-a57-5g-agar-kalian-tidak-penasaran",
         tag: "samsung galaxy a57 5g",
-        judul: "Update Harga Cabai Hari Ini",
+        judul: "samsung galaxy a57 5g",
         cuplikan: "samsung galaxy a57 5g merupakan hp cukup handak untuk....",
         gambar: "https://pbs.twimg.com/card_img/2007754012154580994/nwxElc4W?format=jpg&name=medium",
         tanggal: "2026-01-12",
         isiLengkap: `
-      <h1>Pengalaman Saya Menggunakan Samsung Galaxy A57 5G: Smartphone Kelas Menengah yang Layak Dimiliki</h1>
+      <h2>Pengalaman Saya Menggunakan Samsung Galaxy A57 5G: Smartphone Kelas Menengah yang Layak Dimiliki</h2>
       
       <p>Sebagai pengguna smartphone yang cukup aktif, saya selalu mencari perangkat yang memberikan keseimbangan sempurna antara performa, harga, dan fitur. Ketika Samsung mengumumkan kehadiran Galaxy A57 5G, saya langsung tertarik untuk mencobanya. Setelah menggunakan perangkat ini selama beberapa waktu, saya merasa perlu membagikan pengalaman lengkap saya kepada Anda yang sedang mempertimbangkan untuk membeli smartphone ini.
 
@@ -104,6 +104,7 @@ Dalam artikel ini, saya akan membagikan pengalaman mendalam saya menggunakan Sam
         isiLengkap: `<p>Harga cabai mengalami kenaikan karena faktor cuaca...</p>`
     }
 ];
+
 
 
 
