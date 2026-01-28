@@ -5,7 +5,7 @@ const daftarArtikel = [
         judul: "samsung galaxy a57 5g",
         cuplikan: "samsung galaxy a57 5g merupakan hp cukup handak untuk....",
         gambar: "https://s.alicdn.com/@sc04/kf/H43c3978bb5e042a7989189a78737803dL.jpg",
-        tanggal: "2026-01-12",
+        tanggal: "2026-01-28",
         isiLengkap: `
       <h2>Pengalaman Saya Menggunakan Samsung Galaxy A57 5G: Smartphone Kelas Menengah yang Layak Dimiliki</h2>
       
@@ -105,6 +105,7 @@ Dalam artikel ini, saya akan membagikan pengalaman mendalam saya menggunakan Sam
         isiLengkap: `<p>Harga cabai mengalami kenaikan karena faktor cuaca...</p>`
     }
 ];
+
 
 
 
