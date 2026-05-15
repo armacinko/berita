@@ -1,9 +1,9 @@
 const daftarArtikel = [
     
     {
-        id: "analisis-komprehensif-rumor-nintendo-switch-2-bocoran-spesifikasi-chipset-nvidia-t239-teknologi-dlss-3-1-fitur-backward-compatibility-prediksi-harga-resmi-dan-strategi-dominasi-pasar-konsol-handheld-next-gen-2025-dalam-perspektif-ahli-teknologi",
+        id: "analisis-komprehensif-rumor-nintendo-switch-2-bocoran-spesifikasi-chipset-nvidia-t239-teknologi-dlss-3-1-fitur-backward-compatibility-prediksi-harga-resmi-dan-strategi-dominasi-pasar-konsol-handheld-next-gen-2026-dalam-perspektif-ahli-teknologi",
         tag: "switch 2",
-        judul: "Analisis Komprehensif Rumor Nintendo Switch 2: Bocoran Spesifikasi Chipset Nvidia T239, Teknologi DLSS 3.1, Fitur Backward Compatibility, Prediksi Harga Resmi, dan Strategi Dominasi Pasar Konsol Handheld Next-Gen 2025 dalam Perspektif Ahli Teknologi",
+        judul: "Analisis Komprehensif Rumor Nintendo Switch 2: Bocoran Spesifikasi Chipset Nvidia T239, Teknologi DLSS 3.1, Fitur Backward Compatibility, Prediksi Harga Resmi, dan Strategi Dominasi Pasar Konsol Handheld Next-Gen 2026 dalam Perspektif Ahli Teknologi",
         cuplikan: "Bedah tuntas masa depan Nintendo Switch 2. Saya menganalisis performa GPU Nvidia, potensi layar OLED vs LCD, hingga integrasi sistem Joy-Con magnetik terbaru. Panduan investasi gaming paling mendalam untuk transisi ekosistem Nintendo..",
         gambar: "https://pbs.twimg.com/media/GhWdmaFXQAA5dry?format=jpg&name=small",
         tanggal: "2026-05-15",
@@ -279,7 +279,9 @@ const daftarArtikel = [
 <br>
 <p class="mb-2">Menampilkan karya yang diambil dengan L10 adalah bentuk demonstrasi intelektual bahwa kualitas visual tidak berkorelasi linier dengan usia teknologi. Dalam kurasi galeri, penting untuk menyertakan foto yang diambil dalam kondisi pencahayaan yang menantang untuk menunjukkan bagaimana noise dapat dikelola secara artistik. Setiap foto harus menceritakan hubungan antara intensi fotografer dan respon sensor, menciptakan dialog visual yang melampaui batasan fisik perangkat keras.</p>
 <br>
-<p class="mb-2">Setelah meninjau ribuan frame yang dihasilkan oleh berbagai perangkat, <strong></strong>saya<strong></strong> tetap terkesan dengan kejujuran visual yang ditawarkan oleh L10. Ia tidak mencoba mempercantik kenyataan dengan filter buatan, melainkan menangkap cahaya sebagaimana adanya dengan kejernihan yang bermartabat. Galeri akhir dari fondasi artikel ini adalah sebuah penghargaan bagi era di mana fotografi digital mulai menemukan jiwanya, sebuah masa di mana Panasonic dan Leica berkolaborasi untuk menciptakan instrumen yang tidak akan pernah benar-benar menjadi usang di mata para ahli.</p>`
+<p class="mb-2">Setelah meninjau ribuan frame yang dihasilkan oleh berbagai perangkat, <strong></strong>saya<strong></strong> tetap terkesan dengan kejujuran visual yang ditawarkan oleh L10. Ia tidak mencoba mempercantik kenyataan dengan filter buatan, melainkan menangkap cahaya sebagaimana adanya dengan kejernihan yang bermartabat. Galeri akhir dari fondasi artikel ini adalah sebuah penghargaan bagi era di mana fotografi digital mulai menemukan jiwanya, sebuah masa di mana Panasonic dan Leica berkolaborasi untuk menciptakan instrumen yang tidak akan pernah benar-benar menjadi usang di mata para ahli.</p>
+<p>Baca Juga: <a href="https://armacinko.github.io/berita/baca.html?id=analisis-komprehensif-rumor-nintendo-switch-2-bocoran-spesifikasi-chipset-nvidia-t239-teknologi-dlss-3-1-fitur-backward-compatibility-prediksi-harga-resmi-dan-strategi-dominasi-pasar-konsol-handheld-next-gen-2026-dalam-perspektif-ahli-teknologi">Switch 2</a></p>
+`
     },
     
     {
