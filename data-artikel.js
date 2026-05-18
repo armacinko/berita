@@ -1,9 +1,9 @@
 const daftarArtikel = [
     {
-        id: "Jangan-Beli-MacBook-Neo-Sebelum-Baca-5-Kekurangan-Fatal-Ini!",
+        id: "Jangan-Beli-MacBook-Neo-Sebelum-Baca-5-Kekurangan-Fatal-Ini",
         tag: "Macbook Neo",
-        judul: "Jangan Beli MacBook Neo Sebelum Baca 5 Kekurangan Fatal Ini!",
-        cuplikan: "Tiga minggu pakai MacBook Neo, laptop Rp10 jutaan ini sukses bikin saya takjub. Simak review jujur saya soal performa chip A18 Pro di macOS!...",
+        judul: "Jangan Beli MacBook Neo Sebelum Baca 5 Kekurangan Fatal Ini",
+        cuplikan: "Tiga minggu pakai MacBook Neo laptop Rp10 jutaan ini sukses bikin saya takjub Simak review jujur saya soal performa chip A18 Pro di macOS...",
         gambar: "https://www.apple.com/v/macbook-neo/b/images/overview/welcome/hero_static__c07b68h6ap2e_small_2x.jpg",
         tanggal: "2026-05-18",
         isiLengkap: `<h2>Review Komprehensif MacBook Neo di Indonesia: Apakah Layak Dibeli</h2>
@@ -162,7 +162,8 @@ const daftarArtikel = [
 <br>
 <p class="mb-2">Proses pemindahan data dari laptop Windows lama saya ke MacBook Neo ternyata berjalan jauh lebih mudah dari yang saya bayangkan berkat bantuan aplikasi bawaan bernama <strong>Windows Migration Assistant</strong>. Saya cukup menghubungkan kedua laptop ke jaringan Wi-Fi yang sama, membuka aplikasi tersebut, dan membiarkan sistem mentransfer seluruh dokumen, foto, hingga bookmark browser saya secara otomatis selama beberapa jam. Untuk urusan software, untungnya mayoritas aplikasi esensial yang biasa saya gunakan di Windows seperti Microsoft Office, Google Chrome, dan Spotify sudah memiliki versi native macOS yang berjalan dengan sangat stabil di chip A18 Pro ini.</p>
 <br>
-<p class="mb-2">Satu tips penting dari pengalaman saya untuk para pengguna baru adalah jangan terburu-buru menginstal aplikasi pihak ketiga untuk kustomisasi sistem; cobalah eksplorasi fitur bawaan macOS terlebih dahulu seperti <strong>Spotlight Search</strong> yang sangat sakti untuk mencari file apa pun dengan instan, serta gesture trackpad-nya yang sangat intuitif. Setelah melewati fase transisi selama seminggu, saya berani menjamin Anda akan mulai merasakan mengapa banyak orang mengagumi kenyamanan ekosistem macOS. Berpindah ke MacBook Neo bukan sekadar berganti perangkat keras, melainkan mengadopsi gaya kerja baru yang jauh lebih efisien dan menyenangkan.</p>`
+<p class="mb-2">Satu tips penting dari pengalaman saya untuk para pengguna baru adalah jangan terburu-buru menginstal aplikasi pihak ketiga untuk kustomisasi sistem; cobalah eksplorasi fitur bawaan macOS terlebih dahulu seperti <strong>Spotlight Search</strong> yang sangat sakti untuk mencari file apa pun dengan instan, serta gesture trackpad-nya yang sangat intuitif. Setelah melewati fase transisi selama seminggu, saya berani menjamin Anda akan mulai merasakan mengapa banyak orang mengagumi kenyamanan ekosistem macOS. Berpindah ke MacBook Neo bukan sekadar berganti perangkat keras, melainkan mengadopsi gaya kerja baru yang jauh lebih efisien dan menyenangkan.</p>
+`
     },
     
     {
