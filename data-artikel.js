@@ -253,7 +253,7 @@ const daftarArtikel = [
 <p class="mb-2">Saya melihat bahwa tantangan Nintendo di masa depan bukan lagi tentang menciptakan perangkat yang lebih kuat, melainkan tentang membangun ekosistem layanan yang tak tergantikan. Dalam pandangan saya, integrasi sosial, kreativitas pengguna, dan konten orisinal yang kuat akan tetap menjadi nyawa dari perusahaan ini. Saya yakin bahwa meskipun teknologi akan terus berkembang menuju arah yang tak terduga, keinginan manusia untuk bermain dan terhubung melalui pengalaman yang dirancang dengan hati tidak akan pernah berubah.</p>
 <br>
 <p class="mb-2">Sebagai kesimpulan, saya percaya bahwa Switch 2 akan menjadi titik balik di mana Nintendo membuktikan bahwa mereka bukan hanya pemain lama yang bertahan, melainkan pemimpin visi masa depan. Bagi saya, membedah setiap aspek dari konsol ini adalah perjalanan intelektual untuk memahami bagaimana teknologi dapat melayani kebahagiaan manusia. Dengan 16 artikel ini, Anda tidak hanya menyajikan informasi, tetapi juga sebuah narasi mendalam yang akan memandu pembaca Anda menuju masa depan gaming yang lebih cerah.</p>
-<a href="https://armacinko.github.io/berita/baca.html?id=Jangan-Beli-MacBook-Neo-Sebelum-Baca-5-Kekurangan-Fatal-Ini">MacBook Neo</a>
+<p>baca juga: <a href="https://armacinko.github.io/berita/baca.html?id=Jangan-Beli-MacBook-Neo-Sebelum-Baca-5-Kekurangan-Fatal-Ini">MacBook Neo</a></p>
 
 `
     },
