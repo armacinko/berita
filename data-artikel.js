@@ -1,5 +1,23 @@
 const daftarArtikel = [
         {
+        id: "harapan-terakhirku", // ID ini harus unik
+        tag: "mimpi",
+        judul: "harapan terakhirku",
+        cuplikan: "...",
+        gambar: "https://pbs.twimg.com/media/G5ZGMwRboAA35Wh.jpg",
+        tanggal: "2026-05-19",
+        isiLengkap: `
+            <h2>Ini harapan terakhir ku</h2>
+<p>Inilah blog tulisan yg mungkin dihapus bersama internet atau github di kemudian hari tapi ini harapan terakhirku..</p>
+<p><br />kini umur ku 33 tahun sejak post ini diterbitkan,tlah banyak yg dilalui dalam kehidupan.</p>
+<p>&nbsp;</p>
+<blockquote>
+<p>Aku ingin berubah dan maju</p>
+</blockquote>
+<p>baca artikel ini juga: <a href="https://armacinko.github.io/berita/baca.html?id=Jangan-Beli-MacBook-Neo-Sebelum-Baca-5-Kekurangan-Fatal-Ini">MacBook Neo</a></p>
+        `
+    },
+        {
         id: "Jangan-Beli-MacBook-Neo-Sebelum-Baca-5-Kekurangan-Fatal-Ini", // ID ini harus unik
         tag: "MacBook Neo",
         judul: "Jangan Beli MacBook Neo Sebelum Baca 5 Kekurangan Fatal Ini",
