@@ -1,5 +1,34 @@
 const daftarArtikel = [
         {
+        id: "sepi-ditepi-danau", // ID ini harus unik
+        tag: "puisi",
+        judul: "sepi ditepi danau",
+        cuplikan: "ini puisi untuk...",
+        gambar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv5O7BAQ_7UY4PlWxjQKh2gCd2oX0iknsQ5caAyimBUwwoFduk4pUfkaU&s",
+        tanggal: "2026-05-20",
+        isiLengkap: `
+            <div id="model-response-message-contentr_6c8f9fd26217ec2a" class="markdown markdown-main-panel enable-updated-hr-color" dir="ltr">
+<h3 data-path-to-node="0"><strong data-path-to-node="0" data-index-in-node="0">Sepi di Tepian Danau</strong></h3>
+<p data-path-to-node="1">Di tepian danau yang airnya membisu,</p>
+<p data-path-to-node="1">Tersandar sepi sebentuk perahu.</p>
+<p data-path-to-node="1">Tali terikat pada dahan yang menua,</p>
+<p data-path-to-node="1">Menanti tuan yang entah di mana.</p>
+<p data-path-to-node="2">Kabut merayap memeluk batas senja,</p>
+<p data-path-to-node="2">Riak air berbisik tanpa ada nada.</p>
+<p data-path-to-node="2">Langit memudar dari jingga ke kelam,</p>
+<p data-path-to-node="2">Menyisakan perahu dalam diam yang dalam.</p>
+<p data-path-to-node="3">Kayuh tergeletak tak lagi menari membelah air,</p>
+<p data-path-to-node="3">Mengenang perjalanan yang telah lama berakhir.</p>
+<p data-path-to-node="3">Ia tak karam, namun tak jua berlayar,</p>
+<p data-path-to-node="3">Hanya terombang-ambing dalam waktu yang pudar.</p>
+<p data-path-to-node="4">Dalam kesendirian ia memeluk bayang-bayang,</p>
+<p data-path-to-node="4">Menyambut malam yang datang membentang.</p>
+<p data-path-to-node="4">Sebuah kayu usang di tepi air yang tenang,</p>
+<p data-path-to-node="4">Menjadi saksi abadi bagi sepi yang panjang.</p>
+</div>
+`
+    },
+        {
         id: "harapan-terakhirku", // ID ini harus unik
         tag: "mimpi",
         judul: "harapan terakhirku",
